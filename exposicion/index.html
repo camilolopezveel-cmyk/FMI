@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infografía Interactiva | FMI</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -43,7 +41,7 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Custom Scrollbar for longer content */
+        /* Custom Scrollbar */
         .custom-scroll::-webkit-scrollbar {
             width: 8px;
         }
@@ -63,7 +61,6 @@
 <body class="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-900 to-blue-900 relative">
 
     <div class="max-w-6xl w-full flex-grow flex flex-col justify-center">
-        <!-- Encabezado -->
         <header class="text-center mb-12 mt-8 md:mt-0">
             <div class="inline-block mb-4 p-4 rounded-full glass-panel">
                 <svg class="w-12 h-12 text-yellow-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -72,10 +69,8 @@
             <p class="text-xl text-blue-200 font-light">Guardián de la estabilidad económica mundial</p>
         </header>
 
-        <!-- Contenedor Principal de la Infografía -->
         <div class="flex flex-col md:flex-row gap-8 mb-8">
             
-            <!-- Menú Interactivo (Navegación) -->
             <div class="w-full md:w-1/3 flex flex-col gap-4">
                 <button onclick="showTab('tab1')" id="btn-tab1" class="tab-btn active text-left px-6 py-5 rounded-xl border border-transparent glass-panel flex items-center justify-between">
                     <span class="text-lg font-semibold">Origen e Historia</span>
@@ -95,15 +90,18 @@
                 </button>
             </div>
 
-            <!-- Área de Visualización de Contenido -->
-            <div class="w-full md:w-2/3 glass-panel rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl h-[500px] overflow-y-auto custom-scroll">
+            <div class="w-full md:w-2/3 glass-panel rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl h-[550px] overflow-y-auto custom-scroll">
                 
-                <!-- Decoración de fondo -->
-                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 pointer-events-none"></div>
 
-                <!-- Contenido Tab 1 -->
                 <div id="tab1" class="content-panel active relative z-10">
-                    <h2 class="text-3xl font-bold mb-6 text-yellow-400">El Nacimiento de una Institución Global</h2>
+                    <h2 class="text-3xl font-bold mb-4 text-yellow-400">El Nacimiento de una Institución Global</h2>
+                    
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 border border-white/10 shadow-lg relative">
+                        <img src="https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sede o Arquitectura clásica en Washington DC" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
+                    </div>
+
                     <p class="text-lg text-blue-100 mb-6 leading-relaxed">El FMI es una organización internacional que actualmente cuenta con <strong class="text-white">191 países miembros</strong>. Nació de la necesidad de reconstruir el sistema económico tras devastadores conflictos bélicos y crisis financieras.</p>
                     <ul class="space-y-5">
                         <li class="flex items-start">
@@ -112,71 +110,74 @@
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">El Fantasma de la Gran Depresión:</strong> Su propósito inicial fue evitar que los países repitieran los errores de los años 30, donde las devaluaciones competitivas de las monedas destruyeron el comercio mundial.</div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">Sede e Inicio:</strong> Inició operaciones formales en 1945 y su sede central se estableció en Washington D.C., a pocas cuadras de su institución hermana: el Banco Mundial.</div>
+                            <div><strong class="text-white block text-lg mb-1">Sede e Inicio:</strong> Inició operaciones formales en 1945 y su sede central se estableció en Washington D.C., a pocas cuadras del Banco Mundial.</div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Contenido Tab 2 -->
                 <div id="tab2" class="content-panel relative z-10">
-                    <h2 class="text-3xl font-bold mb-6 text-yellow-400">¿Qué busca lograr en el mundo?</h2>
-                    <p class="text-lg text-blue-100 mb-6 leading-relaxed">A diferencia de un banco tradicional que busca generar ganancias, el FMI tiene un mandato macroeconómico. Sus objetivos están diseñados para promover el crecimiento sostenible a nivel mundial.</p>
+                    <h2 class="text-3xl font-bold mb-4 text-yellow-400">¿Qué busca lograr en el mundo?</h2>
+                    
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 border border-white/10 shadow-lg relative">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Conexiones globales y red mundial" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
+                    </div>
+
+                    <p class="text-lg text-blue-100 mb-6 leading-relaxed">A diferencia de un banco tradicional que busca generar ganancias, el FMI tiene un mandato macroeconómico para promover el crecimiento sostenible a nivel mundial.</p>
                     <ul class="space-y-5">
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">Estabilidad del Sistema Monetario:</strong> Su función primordial es garantizar la seguridad del sistema internacional de pagos y tipos de cambio, permitiendo a los países efectuar transacciones de forma confiable.</div>
+                            <div><strong class="text-white block text-lg mb-1">Estabilidad del Sistema Monetario:</strong> Su función primordial es garantizar la seguridad del sistema internacional de pagos y tipos de cambio.</div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">Facilitar el Comercio Internacional:</strong> Promueve políticas que eliminen las restricciones cambiarias y comerciales, fomentando un mercado global fluido y predecible.</div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">Desarrollo y Pobreza:</strong> Busca fomentar altos niveles de empleo e ingresos reales, aportando activamente a la reducción de la pobreza y alineándose con los Objetivos de Desarrollo Sostenible.</div>
+                            <div><strong class="text-white block text-lg mb-1">Comercio y Desarrollo:</strong> Promueve políticas que eliminen restricciones, fomentando un mercado global fluido y aportando activamente a la reducción de la pobreza.</div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Contenido Tab 3 -->
                 <div id="tab3" class="content-panel relative z-10">
-                    <h2 class="text-3xl font-bold mb-6 text-yellow-400">Estructura, Dinero y Poder de Voto</h2>
+                    <h2 class="text-3xl font-bold mb-4 text-yellow-400">Estructura, Dinero y Poder de Voto</h2>
+                    
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 border border-white/10 shadow-lg relative">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Gráficos financieros y economía" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
+                    </div>
+
                     <p class="text-lg text-blue-100 mb-6 leading-relaxed">Las decisiones clave y los fondos del FMI provienen de sus propios miembros. Actualmente es liderado por la Directora Gerente, <strong class="text-white">Kristalina Georgieva</strong>.</p>
                     <ul class="space-y-5">
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">El Sistema de Cuotas:</strong> Es la principal fuente de financiamiento. Al unirse, a cada país se le asigna una cuota calculada en base a su Producto Interno Bruto (PIB), apertura económica y reservas internacionales.</div>
+                            <div><strong class="text-white block text-lg mb-1">El Sistema de Cuotas:</strong> Es la principal fuente de financiamiento. Al unirse, a cada país se le asigna una cuota calculada en base a su PIB y reservas internacionales.</div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">El Valor del Voto:</strong> En el FMI rige la regla financiera: "el poder de voto es proporcional al capital aportado". Economías como Estados Unidos, China o Japón tienen mucha más influencia en las votaciones que países pequeños.</div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">El DEG (Derechos Especiales de Giro):</strong> El FMI creó su propio activo de reserva internacional. No es una moneda que puedas tocar, sino un respaldo financiero que los países pueden intercambiar por divisas fuertes (dólares, euros) en tiempos de crisis.</div>
+                            <div><strong class="text-white block text-lg mb-1">El Valor del Voto y el DEG:</strong> En el FMI "el poder de voto es proporcional al capital aportado". Además, manejan un activo de reserva internacional llamado Derechos Especiales de Giro (DEG).</div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Contenido Tab 4 -->
                 <div id="tab4" class="content-panel relative z-10">
-                    <h2 class="text-3xl font-bold mb-6 text-yellow-400">¿Cómo ejecuta su misión?</h2>
+                    <h2 class="text-3xl font-bold mb-4 text-yellow-400">¿Cómo ejecuta su misión?</h2>
+                    
+                    <div class="w-full h-48 rounded-xl overflow-hidden mb-6 border border-white/10 shadow-lg relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Reunión de análisis financiero y gráficas" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
+                    </div>
+
                     <p class="text-lg text-blue-100 mb-6 leading-relaxed">Para mantener la maquinaria económica global funcionando, el FMI trabaja en el día a día a través de tres herramientas prácticas e interconectadas.</p>
                     <ul class="space-y-5">
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">1. Supervisión (Consultas del Artículo IV):</strong> Actúa como el auditor de la economía mundial. Anualmente, envía expertos a los países miembros para revisar sus finanzas, alertar sobre posibles crisis (inflación, deudas altas) y recomendar ajustes preventivos.</div>
+                            <div><strong class="text-white block text-lg mb-1">1. Supervisión (Artículo IV):</strong> Actúa como el auditor de la economía mundial, enviando expertos a revisar finanzas y alertar sobre posibles crisis.</div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">2. Asistencia Financiera (Préstamos):</strong> Funciona como prestamista de última instancia. Si un país se queda sin dinero para pagar importaciones esenciales o su deuda externa, el FMI inyecta capital. Sin embargo, exige "condicionalidad": el país debe aplicar un programa de austeridad y reformas estructurales para recibir los desembolsos.</div>
+                            <div><strong class="text-white block text-lg mb-1">2. Asistencia Financiera:</strong> Otorga préstamos de emergencia a países sin liquidez, a cambio de que apliquen programas de austeridad y reformas.</div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-4 mt-1 text-xl">✦</span>
-                            <div><strong class="text-white block text-lg mb-1">3. Fortalecimiento de Capacidades:</strong> Brinda educación gratuita, asistencia técnica y asesoramiento a los gobiernos en temas muy específicos, como recaudación de impuestos justa, manejo del Banco Central o modernización de leyes contra el lavado de dinero.</div>
+                            <div><strong class="text-white block text-lg mb-1">3. Fortalecimiento de Capacidades:</strong> Brinda educación gratuita y asesoramiento técnico a los gobiernos y bancos centrales.</div>
                         </li>
                     </ul>
                 </div>
@@ -184,13 +185,11 @@
             </div>
         </div>
         
-        <!-- Pie de página (Grupo 5) -->
         <footer class="text-center mt-auto pb-4">
             <span class="text-xs tracking-widest text-blue-200/40 uppercase font-semibold">Grupo 5</span>
         </footer>
     </div>
 
-    <!-- Script de Interactividad -->
     <script>
         function showTab(tabId) {
             // Ocultar todos los paneles
